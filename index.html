@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Georgia’s Finest Auto Insurance</title>
+  <link rel="stylesheet" href="style.css" />
+  <script defer src="script.js"></script>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <img src="logo.png" alt="Georgia’s Finest Insurance" class="logo" />
+      <h1>Get Your Free Auto Insurance Quote</h1>
+    </header>
+
+    <form id="quoteForm">
+      <div class="step" id="step1">
+        <h2>Step 1: Contact Info</h2>
+        <input type="text" id="firstName" placeholder="First Name" required />
+        <input type="text" id="lastName" placeholder="Last Name" required />
+        <input type="email" id="email" placeholder="Email" required />
+        <input type="tel" id="phone" placeholder="Phone (10 digits)" required pattern="\d{10}" />
+        <input type="text" id="address" placeholder="Address" required />
+        <button type="button" onclick="nextStep()">Next</button>
+      </div>
+
+      <div class="step" id="step2" style="display:none;">
+        <h2>Step 2: Drivers</h2>
+        <div id="driversContainer"></div>
+        <button type="button" onclick="addDriver()">Add Driver</button>
+        <button type="button" onclick="prevStep()">Back</button>
+        <button type="button" onclick="nextStep()">Next</button>
+      </div>
+
+      <div class="step" id="step3" style="display:none;">
+        <h2>Step 3: Vehicles</h2>
+        <div id="vehiclesContainer"></div>
+        <button type="button" onclick="addVehicle()">Add Vehicle</button>
+        <button type="button" onclick="prevStep()">Back</button>
+        <button type="button" onclick="nextStep()">Next</button>
+      </div>
+
+      <div class="step" id="step4" style="display:none;">
+        <h2>Step 4: Insurance Details</h2>
+        <label>Current Insurer: <input type="text" id="insurer" /></label>
+        <label>Time with Insurer: <input type="text" id="timeWithInsurer" /></label>
+        <label>Current Liability Limits:
+          <select id="liabilityLimits">
+            <option value="25/50">25,000/50,000</option>
+            <option value="50/100">50,000/100,000</option>
+            <option value="100/300">100,000/300,000</option>
+            <option value="greater">Greater than 100,000/300,000</option>
+          </select>
+        </label>
+        <label>Premium: <input type="number" id="premium" /></label>
+        <select id="premiumType">
+          <option value="monthly">Monthly</option>
+          <option value="6months">6 Months</option>
+        </select>
+        <button type="button" onclick="prevStep()">Back</button>
+        <button type="button" onclick="nextStep()">Next</button>
+      </div>
+
+      <div class="step" id="step5" style="display:none;">
+        <h2>Step 5: Confirmation</h2>
+        <p>Thanks! Your quote will be emailed to you within 30 minutes.</p>
+        <button type="submit">Submit</button>
+      </div>
+    </form>
+  </div>
+</body>
+</html>
